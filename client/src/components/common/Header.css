@@ -1,0 +1,252 @@
+.header {
+  background: linear-gradient(to right, #0f1117, #171923);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(45, 55, 72, 0.3);
+}
+
+.header.dark {
+  background: linear-gradient(to right, #0f1117, #171923);
+  border-bottom: 1px solid rgba(45, 55, 72, 0.3);
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.logo-section:hover {
+  transform: translateY(-2px);
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #9f7aea, #4299e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  color: #718096;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.dark .link {
+  color: #718096;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(45deg, #9f7aea, #4299e1);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.link:hover {
+  color: #a0aec0;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.user-profile-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  background: rgba(26, 32, 44, 0.95);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(45, 55, 72, 0.3);
+}
+
+.dark .user-info {
+  background: rgba(26, 32, 44, 0.95);
+}
+
+.user-info:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(159, 122, 234, 0.2);
+}
+
+.author-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid #9f7aea;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.author-name {
+  font-weight: 600;
+  color: #a0aec0;
+  font-size: 0.95rem;
+}
+
+.dark .author-name {
+  color: #a0aec0;
+}
+
+.role-badge {
+  font-size: 0.75rem;
+  color: #718096;
+  background: rgba(159, 122, 234, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+
+.dark .role-badge {
+  background: rgba(159, 122, 234, 0.2);
+}
+
+.custom-btn {
+  background: linear-gradient(45deg, #9f7aea, #4299e1);
+  color: #1a202c;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.custom-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(159, 122, 234, 0.3);
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: #718096;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark .theme-toggle {
+  color: #718096;
+}
+
+.theme-toggle:hover {
+  background: rgba(159, 122, 234, 0.2);
+  color: #a0aec0;
+  transform: rotate(15deg);
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #718096;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .nav-left {
+    gap: 2rem;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-right {
+    gap: 1rem;
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .custom-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+} 
